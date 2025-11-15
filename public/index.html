@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        <div id="hud">
+            <div id="healthBar">
+                <div id="healthFill"></div>
+                <span id="healthText">100</span>
+            </div>
+            <div id="ammoDisplay">
+                <span id="ammoCurrent">40</span> / <span id="ammoTotal">9999+</span>
+            </div>
+            <div id="scoreDisplay">Score: <span id="score">0</span></div>
+            <div id="killsDisplay">Kills: <span id="kills">0</span></div>
+            <div id="weaponName">SMG</div>
+        </div>
+        <div id="crosshair">
+            <div class="crosshair-line horizontal"></div>
+            <div class="crosshair-line vertical"></div>
+        </div>
+        <div id="startScreen">
+            <h1>FPS Game</h1>
+            <p>WASD - Move | Mouse - Look | Left Click - Shoot | R - Reload | 1,2,3,4 - Switch Weapons (Pistol, Rifle, Shotgun, SMG)</p>
+            <input type="text" id="playerName" placeholder="Enter your name" maxlength="20">
+            <input type="number" id="playerAge" placeholder="Enter your age" min="1" max="120" inputmode="numeric">
+            <input type="text" id="playerCountry" placeholder="Enter your country" maxlength="50">
+            <button id="startButton">Start Game</button>
+        </div>
+        <div id="gameOverScreen" style="display: none;">
+            <h1>Game Over</h1>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <p>Kills: <span id="finalKills">0</span></p>
+            <button id="restartButton">Play Again</button>
+        </div>
+        <div id="scoreboard" style="display: none;">
+            <h2 id="scoreboardTitle">Top Scores</h2>
+            <div style="margin-bottom:10px; text-align:center;">
+                <button id="toggleLeaderboard" style="margin-right:8px;">Show Leaderboard</button>
+                <button id="toggleTopScores">Show Top Scores</button>
+            </div>
+            <div id="scoreboardList"></div>
+            <button id="closeScoreboard">Close</button>
+        </div>
+        <button id="showScoreboard" style="position: absolute; top: 10px; right: 10px; z-index: 20; display: none;">Scoreboard</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
+
